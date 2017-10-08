@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name            Google Translator Tooltip Expanded Fork
-// @description     Translates the selected text into a tooltip automatically. Fork from https://greasyfork.org/scripts/5727/
+// @name            Google翻譯提示框擴充套件
+// @description     Google翻譯選中文字至提示框。Fork自https://greasyfork.org/scripts/662/
 // @namespace       https://greasyfork.org/scripts/16204/
 // @homepage        https://greasyfork.org/scripts/16204/
 // @version         1.23
