@@ -555,7 +555,7 @@ var ttsURL= "http://" + googleDomain + "/translate_tts?client=t";
 
 const HREF_NO = 'javascript:void(0)';
 initCrossBrowserSupportForGmFunctions();
-var languagesGoogle = '<option value="auto">Detect language</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Aerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="zh-CN">Chinese (simplified)</option><option value="zh-TW">Chinese (traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="en">English</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="ht">Haitian Creole</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option  value="ja">Japanese</option><option value="ko">Korean</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="ms">Malay</option><option value="mt">Maltese</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sr">Serbian</option><option value="sk">Slovak</option><option  value="sl">Slovenian</option><option value="es">Spanish</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="yi">Yiddish</option>';
+var languagesGoogle = '<option value="auto">偵測語言</option><option value="af">南非語</option><option value="sq">阿爾巴尼亞語</option><option value="ar">阿拉伯語</option><option value="hy">亞美尼亞語</option><option value="az">亞塞拜然語</option><option value="eu">巴斯克語</option><option value="be">白俄羅斯語</option><option value="bn">孟加拉語</option><option value="bg">保加利亞語</option><option value="ca">加泰羅尼亞語</option><option value="zh-CN">中文(簡體)</option><option value="zh-TW">中文(繁體)</option><option value="hr">克羅埃西亞語</option><option value="cs">捷克語</option><option value="da">丹麥語</option><option value="nl">荷蘭語</option><option value="en">英語</option><option value="et">愛沙尼亞語</option><option value="tl">菲律賓語</option><option value="fi">芬蘭語</option><option value="fr">法語</option><option value="gl">加利西亞</option><option value="ka">喬治亞</option><option value="de">德國</option><option value="el">希臘</option><option value="ht">海地克里奧爾語</option><option value="iw">希伯來語</option><option value="hi">印地語</option><option value="hu">匈牙利</option><option value="is">冰島語</option><option value="id">印尼語</option><option value="ga">愛爾蘭</option><option value="it">義大利</option><option  value="ja">日語</option><option value="ko">韓語</option><option value="lv">拉脫維亞語</option><option value="lt">立陶宛語</option><option value="mk">馬其頓語</option><option value="ms">馬來語</option><option value="mt">馬耳他語</option><option value="no">挪威語</option><option value="fa">波斯語</option><option value="pl">波蘭語</option><option value="pt">葡萄牙語</option><option value="ro">羅馬尼亞語</option><option value="ru">俄羅斯語</option><option value="sr">塞爾維亞語</option><option value="sk">斯洛伐克</option><option  value="sl">斯洛維尼亞語</option><option value="es">西班牙語</option><option value="sw">斯瓦希裡語</option><option value="sv">瑞典語</option><option value="th">泰國語</option><option value="tr">土耳其語</option><option value="uk">烏克蘭語</option><option value="ur">烏爾都語</option><option value="vi">越南語</option><option value="cy">威爾士語</option><option value="yi">意第緒語</option>';
 var body = getTag('body')[0];
 var imgLookup;
 var txtSel = encodeURIComponent(txtSel); // text selected
@@ -867,14 +867,14 @@ function extractResult(gTradStringArray) {
     translation += ' <span id="texttospeechbuttonto"></span><br/>';
     translation += '<span id="translation2Element"></span>';
     translation += '<span id="translation3Element"></span>';
-    translation += '<a id="toggleShowDetails" style="color:#000;' + (!GM_getValue('details', 'false') ? 'display:none;"' : '"') + '>Show details</a>';
-    translation += '<span id="divDetails" ' + (GM_getValue('details', 'false') ? 'style="display:none;"' : '') + '><a style="color:#000;" id="toggleHideDetails">Hide details</a><br/>';
+    translation += '<a id="toggleShowDetails" style="color:#000;' + (!GM_getValue('details', 'false') ? 'display:none;"' : '"') + '>顯示詳情▼</a>';
+    translation += '<span id="divDetails" ' + (GM_getValue('details', 'false') ? 'style="display:none;"' : '') + '><a style="color:#000;" id="toggleHideDetails">隱藏詳情▲</a><br/>';
 
     // 1 - Grammar
     if (typeof arr[1] != 'undefined' && arr[1] != null ||
         typeof arr[5] != 'undefined' && arr[5] != null ||
         typeof arr[14] != 'undefined' && arr[14] != null) {
-        translation += '<strong>Translations</strong><br/>';
+        translation += '<strong>翻譯</strong><br/>';
     }
 
     if (typeof arr[1] != 'undefined' && arr[1] != null) {
@@ -890,7 +890,7 @@ function extractResult(gTradStringArray) {
         if (typeof arr[5] != 'undefined' && arr[5] != null) {
             for (var i = 0; i < arr[5].length; i++) {
                 if (typeof arr[5][i][2] != 'undefined' && arr[5][i][2] != null) { // 5/i/2 array of alternatives, 5/i/0 the part of the text we are studying
-                    translation += '<i>alternatives: </i>';
+                    translation += '<i>其他翻譯: </i>';
                     for (var j = 0; j < arr[5][i][2].length; j++) {
                         translation += '<i>' + ((j == 0) ? '' : ', ') + arr[5][i][2][j][0] + '</i>';
                     }
@@ -903,7 +903,7 @@ function extractResult(gTradStringArray) {
     // 14 - See also
     if (typeof arr[14] != 'undefined' && arr[14] != null) {
         // for (var i = 0; i < arr[14].length; i++) {
-            translation += '<i>See also: </i>';
+            translation += '<i>其他: </i>';
             translation += '<i>' + arr[14][0].join(', ') + '</i>';
             translation += '<br/>';
         // }
@@ -918,7 +918,7 @@ function extractResult(gTradStringArray) {
 
     // 12 and 11 - Definitions and Synonyms
     if (typeof arr[12] != 'undefined' && arr[12] != null) {
-        translation += '<strong>Definitions</strong><br/>';
+        translation += '<strong>定義</strong><br/>';
         for (var i = 0; i < arr[12].length; i++) {
             if (typeof arr[12][i][1] != 'undefined' && arr[12][i][1] != null) { // 11/i/1 array of alternatives, 11/i/0 the part of the text we are studying
                 for (var j = 0; j < arr[12][i][1].length; j++) {
@@ -930,7 +930,7 @@ function extractResult(gTradStringArray) {
                             if (typeof arr[11][i] != 'undefined' && [11][i] != null) {
                                 for (var k = 0; k < arr[11][i][1].length; k++) {
                                     if (arr[12][i][1][j][1] == arr[11][i][1][k][1]) {
-                                        translation += '<i>synonyms:</i> ';
+                                        translation += '<i>同義詞:</i> ';
                                         translation += '<i>' + arr[11][i][1][k][0].join(', ') + '</i>';
                                         translation += '<br/>';
                                         break;
@@ -1085,7 +1085,7 @@ function openCloseOptions(evt) {
         divOptionsFields = createElement('p', {style: "margin:0px;padding:0px;line-height:160%;"});
         divOptions.appendChild(divOptionsFields);
         //from
-        divOptionsFields.appendChild(createElement('span', null, null, 'From: '));
+        divOptionsFields.appendChild(createElement('span', null, null, '從: '));
         divOptionsFields.appendChild(createElement('select', {
                 id : 'optSelLangFrom'
             }, null, languagesGoogle));
@@ -1093,7 +1093,7 @@ function openCloseOptions(evt) {
         getId('optSelLangFrom').addEventListener('change', quickLookup, false);
         //to
         divOptionsFields.appendChild(createElement('br'));
-        divOptionsFields.appendChild(createElement('span', null, null, 'To: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'));
+        divOptionsFields.appendChild(createElement('span', null, null, '到: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'));
         divOptionsFields.appendChild(createElement('select', {
                 id : 'optSelLangTo'
             }, null, languagesGoogle));
@@ -1101,10 +1101,10 @@ function openCloseOptions(evt) {
         getId('optSelLangTo').addEventListener('change', quickLookup, false);
         //to2
         divOptionsFields.appendChild(createElement('br'));
-        divOptionsFields.appendChild(createElement('span', null, null, 'To 2: &nbsp;&nbsp;'));
+        divOptionsFields.appendChild(createElement('span', null, null, '到 (2): &nbsp;&nbsp;'));
         divOptionsFields.appendChild(createElement('select', {
                 id : 'optSelLangTo2'
-            }, null, '<option value="Disabled">Disabled</option>' + languagesGoogle));
+            }, null, '<option value="Disabled">不顯示</option>' + languagesGoogle));
         getId('optSelLangTo2').value = GM_getValue('to2') ? GM_getValue('to2') : 'Disabled';
         getId('optSelLangTo2').addEventListener('change', quickLookup, false);
         //to3
@@ -1112,7 +1112,7 @@ function openCloseOptions(evt) {
         divOptionsFields.appendChild(createElement('span', null, null, 'To 3: &nbsp;&nbsp;'));
         divOptionsFields.appendChild(createElement('select', {
                 id : 'optSelLangTo3'
-            }, null, '<option value="Disabled">Disabled</option>' + languagesGoogle));
+            }, null, '<option value="Disabled">不顯示</option>' + languagesGoogle));
         getId('optSelLangTo3').value = GM_getValue('to3') ? GM_getValue('to3') : 'Disabled';
         getId('optSelLangTo3').addEventListener('change', quickLookup, false);
         //use text to speech
@@ -1122,7 +1122,7 @@ function openCloseOptions(evt) {
             type : 'checkbox',
             style: "margin-left:0px;"
         }));
-        divOptionsFields.appendChild(createElement('span', null, null, '<span title="The feature has many issues. You often have to refresh the page to launch the .mp3 file. If you use the langage auto-detection, you have to change the langage in the url of the new tab."> Display Text To speech</span>'));
+        divOptionsFields.appendChild(createElement('span', null, null, '<span title="該功能有很多問題。你需要經常重新整理頁面啟動.mp3檔案。\n你需要先設定某種語言。\n如果您使用了“自動檢測語言”，那麼只有英語能夠正確發音。"> 轉換文字為語言</span>'));
         getId('checkTTS').checked = GM_getValue('tts');
         //hide details
         divOptionsFields.appendChild(createElement('br'));
@@ -1131,7 +1131,7 @@ function openCloseOptions(evt) {
             type : 'checkbox',
             style: "margin-left:0px;"
         }));
-        divOptionsFields.appendChild(createElement('span', null, null, ' Hide details by default'));
+        divOptionsFields.appendChild(createElement('span', null, null, ' 預設隱藏詳細訊息'));
         getId('checkDetails').checked = GM_getValue('details');
 
         //show alternatives in details
@@ -1141,7 +1141,7 @@ function openCloseOptions(evt) {
             type: 'checkbox',
             style: "margin-left:0px;"
         }));
-        divOptionsFields.appendChild(createElement('span', null, null, ' Show alternatives in details'));
+        divOptionsFields.appendChild(createElement('span', null, null, ' 在詳情中顯示其他翻譯'));
         getId('checkAlternatives').checked = GM_getValue('alternatives');
 
         //show synonyms in definitions
@@ -1151,25 +1151,25 @@ function openCloseOptions(evt) {
             type: 'checkbox',
             style: "margin-left:0px;"
         }));
-        divOptionsFields.appendChild(createElement('span', null, null, ' Show synonyms in definitions'));
+        divOptionsFields.appendChild(createElement('span', null, null, ' 定義中顯示同義詞'));
         getId('checkSynonyms').checked = GM_getValue('synonyms');
 
         //font size
         divOptionsFields.appendChild(createElement('br'));
-        divOptionsFields.appendChild(createElement('span', null, null, 'Font size: &nbsp;&nbsp;'));
+        divOptionsFields.appendChild(createElement('span', null, null, '字體大小: &nbsp;&nbsp;'));
         divOptionsFields.appendChild(createElement('select', {
                 id : 'optFontSize',
                 style: 'width:141px'
-            }, null, '<option value="x-small">Extra small</option><option value="small">Small (default)</option><option value="medium">Medium</option><option value="large">Large</option>'));
+            }, null, '<option value="x-small">超小字(12px)</option><option value="small">小(13px)（預設）</option><option value="medium">中等(16px)</option><option value="large">大(18px)</option>'));
         getId('optFontSize').value = GM_getValue('fontsize') ? GM_getValue('fontsize') : 'small';
         getId('optFontSize').addEventListener('change', quickLookup, false);
         //text color
         divOptionsFields.appendChild(createElement('br'));
-        divOptionsFields.appendChild(createElement('span', null, null, 'Text color: '));
+        divOptionsFields.appendChild(createElement('span', null, null, '文字顏色: '));
         divOptionsFields.appendChild(createElement('select', {
                 id : 'optTextColor',
                 style: 'width:141px'
-            }, null, '<option value="Gray">Gray (default)</option><option value="Black">Black</option><option value="White">White</option><option value="CadetBlue">CadetBlue</option><option value="ForestGreen">ForestGreen</option><option value="FireBrick">FireBrick</option>'));
+            }, null, '<option value="Gray">灰       色(預設)</option><option value="Black">黑       色</option><option value="White">白   色</option><option value="CadetBlue">藏       青</option><option value="ForestGreen">蔥     綠</option><option value="FireBrick">磚       紅</option>'));
         getId('optTextColor').value = GM_getValue('textcolor') ? GM_getValue('textcolor') : 'Gray';
         getId('optTextColor').addEventListener('change', quickLookup, false);
         //use ctrl
@@ -1179,7 +1179,7 @@ function openCloseOptions(evt) {
             type : 'checkbox',
             style: "margin-left:0px;"
         }));
-        divOptionsFields.appendChild(createElement('span', null, null, ' Use Ctrl key'));
+        divOptionsFields.appendChild(createElement('span', null, null, ' 使用Ctrl鍵'));
         getId('checkCtrl').checked = GM_getValue('ctrl');
         //use alt
         divOptionsFields.appendChild(createElement('br'));
@@ -1188,36 +1188,36 @@ function openCloseOptions(evt) {
             type : 'checkbox',
             style: "margin-left:0px;"
         }));
-        divOptionsFields.appendChild(createElement('span', null, null, ' Use Alt key'));
+        divOptionsFields.appendChild(createElement('span', null, null, ' 使用Alt鍵'));
         getId('checkAlt').checked = GM_getValue('alt');
         //delay display
         divOptionsFields.appendChild(createElement('br'));
-        divOptionsFields.appendChild(createElement('span', null, null, 'Delay '));
+        divOptionsFields.appendChild(createElement('span', null, null, '延遲 '));
         divOptionsFields.appendChild(createElement('input', {
             id: 'delayDisplay',
             type: 'text',
             style: "height:20px;width:50px;padding:0px;text-align:center;",
         }));
-        divOptionsFields.appendChild(createElement('span', null, null, ' ms'));
+        divOptionsFields.appendChild(createElement('span', null, null, ' 毫秒'));
         getId('delayDisplay').value = GM_getValue('delay') ? GM_getValue('delay') : '0';
         //save
         divOptionsFields.appendChild(createElement('br'));
         divOptionsFields.appendChild(createElement('a', {
                 href : HREF_NO,
                 class : "gootranslink"
-            }, 'click saveOptions false', 'Save'));
+            }, 'click saveOptions false', '儲存'));
         //reset
         divOptionsFields.appendChild(createElement('span', null, null, ' - '));
         divOptionsFields.appendChild(createElement('a', {
                 href : HREF_NO,
                 class : "gootranslink"
-            }, 'click resetOptions false', 'Reset'));
+            }, 'click resetOptions false', '重置'));
         //cancel
         divOptionsFields.appendChild(createElement('span', null, null, ' - '));
         divOptionsFields.appendChild(createElement('a', {
                 href : HREF_NO,
                 class : "gootranslink"
-            }, 'click openCloseOptions false', 'Cancel'));
+            }, 'click openCloseOptions false', '取消'));
     } else // Hide options
     {
         divOptions.parentNode.removeChild(divOptions);
